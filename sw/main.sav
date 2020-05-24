@@ -1,0 +1,56 @@
+#include <stdio.h>
+#include <cstdint>
+#include <memory.h>
+#include "irq.h"
+
+#define SHORT_DELAY (0x10000/2)
+#define MEDIUM_DELAY (SHORT_DELAY << 1)
+#define LONG_DELAY (MEDIUM_DELAY << 1)
+
+#define GPIO_BASE  0x91000000
+#define TIMER_BASE 0x80000000
+#define SERV_TIMER_IRQ              7
+
+#define TIMER_INC 0xFFF
+volatile uint32_t led_Value  =0x0 ;
+volatile uint32_t *pLED = (volatile uint32_t *)(GPIO_BASE);
+int main(int argc, char **argv)
+{
+	volatile uint32_t *pToTimer = (volatile uint32_t *)(TIMER_BASE);
+		
+	//*pToTimer = TIMER_INC;
+	//clear all pending registers clearing the mip and mie registers
+  //   soc_interrupt_init(); // disable
+	 //enbale mstates 
+//	z_arch_irq_unlock( 0x8);
+	
+//	z_arch_irq_unlock( (1 <<SERV_TIMER_IRQ) | 0x8);
+
+//	z_arch_irq_enable(SERV_TIMER_IRQ );
+
+	while(true)
+	{
+		for (uint32_t delay = 0; delay < LONG_DELAY; ++delay);
+		uint32_t irq_reg = z_arch_irq_lock();
+		led_Value  ^= 0x1;
+		*pLED = led_Value;
+		z_arch_irq_unlock(irq_reg );
+	}
+
+}
+
+extern "C"
+ [[ noreturn ]] void exit( int rc)
+{
+while(1);
+}
+
+
+extern "C"
+void isr(void)
+{
+	volatile uint8_t *pToTimer = (volatile uint8_t *)(0x80000000);
+	*pToTimer += TIMER_INC;
+}
+
+

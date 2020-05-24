@@ -1,0 +1,234 @@
+Archive member included to satisfy reference by file (symbol)
+
+/media/tcmichals/Working/cyclone-10/cyc1000/riscv-gcc/riscv-none-embed-gcc/8.3.0-1.1/bin/../lib/gcc/riscv-none-embed/8.3.0/../../../../riscv-none-embed/lib/rv32i/ilp32/libg.a(lib_a-init.o)
+                              /media/tcmichals/Working/cyclone-10/cyc1000/riscv-gcc/riscv-none-embed-gcc/8.3.0-1.1/bin/../lib/gcc/riscv-none-embed/8.3.0/../../../../riscv-none-embed/lib/rv32i/ilp32/crt0.o (__libc_init_array)
+/media/tcmichals/Working/cyclone-10/cyc1000/riscv-gcc/riscv-none-embed-gcc/8.3.0-1.1/bin/../lib/gcc/riscv-none-embed/8.3.0/../../../../riscv-none-embed/lib/rv32i/ilp32/libg.a(lib_a-memset.o)
+                              /media/tcmichals/Working/cyclone-10/cyc1000/riscv-gcc/riscv-none-embed-gcc/8.3.0-1.1/bin/../lib/gcc/riscv-none-embed/8.3.0/../../../../riscv-none-embed/lib/rv32i/ilp32/crt0.o (memset)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+RAM              0x0000000010000000 0x0000000000002000 xrw
+FLASH            0x0000000000000000 0x0000000000001000 xr
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+LOAD /media/tcmichals/Working/cyclone-10/cyc1000/riscv-gcc/riscv-none-embed-gcc/8.3.0-1.1/bin/../lib/gcc/riscv-none-embed/8.3.0/../../../../riscv-none-embed/lib/rv32i/ilp32/crt0.o
+LOAD /media/tcmichals/Working/cyclone-10/cyc1000/riscv-gcc/riscv-none-embed-gcc/8.3.0-1.1/bin/../lib/gcc/riscv-none-embed/8.3.0/rv32i/ilp32/crtbegin.o
+LOAD /tmp/ccG8zist.o
+LOAD /tmp/cceebg6q.o
+LOAD /media/tcmichals/Working/cyclone-10/cyc1000/riscv-gcc/riscv-none-embed-gcc/8.3.0-1.1/bin/../lib/gcc/riscv-none-embed/8.3.0/../../../../riscv-none-embed/lib/rv32i/ilp32/libstdc++.a
+LOAD /media/tcmichals/Working/cyclone-10/cyc1000/riscv-gcc/riscv-none-embed-gcc/8.3.0-1.1/bin/../lib/gcc/riscv-none-embed/8.3.0/../../../../riscv-none-embed/lib/rv32i/ilp32/libm.a
+LOAD /media/tcmichals/Working/cyclone-10/cyc1000/riscv-gcc/riscv-none-embed-gcc/8.3.0-1.1/bin/../lib/gcc/riscv-none-embed/8.3.0/rv32i/ilp32/libgcc.a
+START GROUP
+LOAD /media/tcmichals/Working/cyclone-10/cyc1000/riscv-gcc/riscv-none-embed-gcc/8.3.0-1.1/bin/../lib/gcc/riscv-none-embed/8.3.0/rv32i/ilp32/libgcc.a
+LOAD /media/tcmichals/Working/cyclone-10/cyc1000/riscv-gcc/riscv-none-embed-gcc/8.3.0-1.1/bin/../lib/gcc/riscv-none-embed/8.3.0/../../../../riscv-none-embed/lib/rv32i/ilp32/libg.a
+LOAD /media/tcmichals/Working/cyclone-10/cyc1000/riscv-gcc/riscv-none-embed-gcc/8.3.0-1.1/bin/../lib/gcc/riscv-none-embed/8.3.0/../../../../riscv-none-embed/lib/rv32i/ilp32/libc.a
+END GROUP
+LOAD /media/tcmichals/Working/cyclone-10/cyc1000/riscv-gcc/riscv-none-embed-gcc/8.3.0-1.1/bin/../lib/gcc/riscv-none-embed/8.3.0/rv32i/ilp32/libgcc.a
+LOAD /media/tcmichals/Working/cyclone-10/cyc1000/riscv-gcc/riscv-none-embed-gcc/8.3.0-1.1/bin/../lib/gcc/riscv-none-embed/8.3.0/rv32i/ilp32/crtend.o
+                0x0000000000000200                _Min_Heap_Size = 0x200
+                0x0000000000000800                _Min_Stack_Size = 0x800
+
+.isr_vector     0x0000000000000000       0xe4
+                0x0000000000000000                . = ALIGN (0x4)
+ *(.isr_vector)
+ .isr_vector    0x0000000000000000       0xe4 /tmp/cceebg6q.o
+                0x0000000000000000                _start_reset_vector
+                0x00000000000000e4                . = ALIGN (0x4)
+
+.text           0x00000000000000e4      0x268
+                0x00000000000000e4                . = ALIGN (0x4)
+ *(.text)
+ .text          0x00000000000000e4       0x50 /media/tcmichals/Working/cyclone-10/cyc1000/riscv-gcc/riscv-none-embed-gcc/8.3.0-1.1/bin/../lib/gcc/riscv-none-embed/8.3.0/../../../../riscv-none-embed/lib/rv32i/ilp32/crt0.o
+                0x00000000000000e4                _start
+ .text          0x0000000000000134        0x0 /media/tcmichals/Working/cyclone-10/cyc1000/riscv-gcc/riscv-none-embed-gcc/8.3.0-1.1/bin/../lib/gcc/riscv-none-embed/8.3.0/rv32i/ilp32/crtbegin.o
+ .text          0x0000000000000134        0x0 /tmp/ccG8zist.o
+ .text          0x0000000000000134        0x0 /tmp/cceebg6q.o
+ .text          0x0000000000000134        0x0 /media/tcmichals/Working/cyclone-10/cyc1000/riscv-gcc/riscv-none-embed-gcc/8.3.0-1.1/bin/../lib/gcc/riscv-none-embed/8.3.0/../../../../riscv-none-embed/lib/rv32i/ilp32/libg.a(lib_a-init.o)
+ .text          0x0000000000000134       0xdc /media/tcmichals/Working/cyclone-10/cyc1000/riscv-gcc/riscv-none-embed-gcc/8.3.0-1.1/bin/../lib/gcc/riscv-none-embed/8.3.0/../../../../riscv-none-embed/lib/rv32i/ilp32/libg.a(lib_a-memset.o)
+                0x0000000000000134                memset
+ .text          0x0000000000000210        0x0 /media/tcmichals/Working/cyclone-10/cyc1000/riscv-gcc/riscv-none-embed-gcc/8.3.0-1.1/bin/../lib/gcc/riscv-none-embed/8.3.0/rv32i/ilp32/crtend.o
+ *(.text*)
+ .text.__do_global_dtors_aux
+                0x0000000000000210       0x4c /media/tcmichals/Working/cyclone-10/cyc1000/riscv-gcc/riscv-none-embed-gcc/8.3.0-1.1/bin/../lib/gcc/riscv-none-embed/8.3.0/rv32i/ilp32/crtbegin.o
+ .text.frame_dummy
+                0x000000000000025c       0x24 /media/tcmichals/Working/cyclone-10/cyc1000/riscv-gcc/riscv-none-embed-gcc/8.3.0-1.1/bin/../lib/gcc/riscv-none-embed/8.3.0/rv32i/ilp32/crtbegin.o
+ .text.startup.main
+                0x0000000000000280       0x3c /tmp/ccG8zist.o
+                0x0000000000000280                main
+ .text.exit     0x00000000000002bc        0x4 /tmp/ccG8zist.o
+                0x00000000000002bc                exit
+ .text.isr      0x00000000000002c0        0x4 /tmp/ccG8zist.o
+                0x00000000000002c0                isr
+ .text.__libc_init_array
+                0x00000000000002c4       0x84 /media/tcmichals/Working/cyclone-10/cyc1000/riscv-gcc/riscv-none-embed-gcc/8.3.0-1.1/bin/../lib/gcc/riscv-none-embed/8.3.0/../../../../riscv-none-embed/lib/rv32i/ilp32/libg.a(lib_a-init.o)
+                0x00000000000002c4                __libc_init_array
+ *(.glue_7)
+ *(.glue_7t)
+ *(.eh_frame)
+ .eh_frame      0x0000000000000348        0x0 /media/tcmichals/Working/cyclone-10/cyc1000/riscv-gcc/riscv-none-embed-gcc/8.3.0-1.1/bin/../lib/gcc/riscv-none-embed/8.3.0/rv32i/ilp32/crtbegin.o
+ .eh_frame      0x0000000000000348        0x4 /media/tcmichals/Working/cyclone-10/cyc1000/riscv-gcc/riscv-none-embed-gcc/8.3.0-1.1/bin/../lib/gcc/riscv-none-embed/8.3.0/rv32i/ilp32/crtend.o
+ *(.init)
+ *(.fini)
+                0x000000000000034c                . = ALIGN (0x4)
+                0x000000000000034c                _etext = .
+
+.rela.dyn       0x000000000000034c        0x0
+ .rela.text     0x000000000000034c        0x0 /media/tcmichals/Working/cyclone-10/cyc1000/riscv-gcc/riscv-none-embed-gcc/8.3.0-1.1/bin/../lib/gcc/riscv-none-embed/8.3.0/../../../../riscv-none-embed/lib/rv32i/ilp32/crt0.o
+ .rela.text.__do_global_dtors_aux
+                0x000000000000034c        0x0 /media/tcmichals/Working/cyclone-10/cyc1000/riscv-gcc/riscv-none-embed-gcc/8.3.0-1.1/bin/../lib/gcc/riscv-none-embed/8.3.0/../../../../riscv-none-embed/lib/rv32i/ilp32/crt0.o
+ .rela.text.frame_dummy
+                0x000000000000034c        0x0 /media/tcmichals/Working/cyclone-10/cyc1000/riscv-gcc/riscv-none-embed-gcc/8.3.0-1.1/bin/../lib/gcc/riscv-none-embed/8.3.0/../../../../riscv-none-embed/lib/rv32i/ilp32/crt0.o
+ .rela.isr_vector
+                0x000000000000034c        0x0 /media/tcmichals/Working/cyclone-10/cyc1000/riscv-gcc/riscv-none-embed-gcc/8.3.0-1.1/bin/../lib/gcc/riscv-none-embed/8.3.0/../../../../riscv-none-embed/lib/rv32i/ilp32/crt0.o
+ .rela.text.__libc_init_array
+                0x000000000000034c        0x0 /media/tcmichals/Working/cyclone-10/cyc1000/riscv-gcc/riscv-none-embed-gcc/8.3.0-1.1/bin/../lib/gcc/riscv-none-embed/8.3.0/../../../../riscv-none-embed/lib/rv32i/ilp32/crt0.o
+
+.rodata         0x000000000000034c        0x0
+                0x000000000000034c                . = ALIGN (0x4)
+ *(.rodata)
+ *(.rodata*)
+                0x000000000000034c                . = ALIGN (0x4)
+
+.preinit_array  0x000000000000034c        0x0
+                0x000000000000034c                PROVIDE (__preinit_array_start = .)
+ *(.preinit_array*)
+                0x000000000000034c                PROVIDE (__preinit_array_end = .)
+
+.init_array     0x000000000000034c        0x4
+                0x000000000000034c                PROVIDE (__init_array_start = .)
+ *(SORT_BY_NAME(.init_array.*))
+ *(.init_array*)
+ .init_array    0x000000000000034c        0x4 /media/tcmichals/Working/cyclone-10/cyc1000/riscv-gcc/riscv-none-embed-gcc/8.3.0-1.1/bin/../lib/gcc/riscv-none-embed/8.3.0/rv32i/ilp32/crtbegin.o
+                0x0000000000000350                PROVIDE (__init_array_end = .)
+
+.fini_array     0x0000000000000350        0x4
+                [!provide]                        PROVIDE (__fini_array_start = .)
+ *(SORT_BY_NAME(.fini_array.*))
+ *(.fini_array*)
+ .fini_array    0x0000000000000350        0x4 /media/tcmichals/Working/cyclone-10/cyc1000/riscv-gcc/riscv-none-embed-gcc/8.3.0-1.1/bin/../lib/gcc/riscv-none-embed/8.3.0/rv32i/ilp32/crtbegin.o
+                [!provide]                        PROVIDE (__fini_array_end = .)
+                0x0000000000000354                _sidata = LOADADDR (.data)
+
+.data           0x0000000010000000        0x0 load address 0x0000000000000354
+                0x0000000010000000                . = ALIGN (0x4)
+                0x0000000010000000                _sdata = .
+ *(.data)
+ .data          0x0000000010000000        0x0 /media/tcmichals/Working/cyclone-10/cyc1000/riscv-gcc/riscv-none-embed-gcc/8.3.0-1.1/bin/../lib/gcc/riscv-none-embed/8.3.0/../../../../riscv-none-embed/lib/rv32i/ilp32/crt0.o
+ .data          0x0000000010000000        0x0 /media/tcmichals/Working/cyclone-10/cyc1000/riscv-gcc/riscv-none-embed-gcc/8.3.0-1.1/bin/../lib/gcc/riscv-none-embed/8.3.0/rv32i/ilp32/crtbegin.o
+ .data          0x0000000010000000        0x0 /tmp/ccG8zist.o
+ .data          0x0000000010000000        0x0 /tmp/cceebg6q.o
+ .data          0x0000000010000000        0x0 /media/tcmichals/Working/cyclone-10/cyc1000/riscv-gcc/riscv-none-embed-gcc/8.3.0-1.1/bin/../lib/gcc/riscv-none-embed/8.3.0/../../../../riscv-none-embed/lib/rv32i/ilp32/libg.a(lib_a-init.o)
+ .data          0x0000000010000000        0x0 /media/tcmichals/Working/cyclone-10/cyc1000/riscv-gcc/riscv-none-embed-gcc/8.3.0-1.1/bin/../lib/gcc/riscv-none-embed/8.3.0/../../../../riscv-none-embed/lib/rv32i/ilp32/libg.a(lib_a-memset.o)
+ .data          0x0000000010000000        0x0 /media/tcmichals/Working/cyclone-10/cyc1000/riscv-gcc/riscv-none-embed-gcc/8.3.0-1.1/bin/../lib/gcc/riscv-none-embed/8.3.0/rv32i/ilp32/crtend.o
+ *(.data*)
+                0x0000000010000000                . = ALIGN (0x4)
+
+.data1
+ *(.data1)
+
+.got
+ *(.got.plt)
+ *(.igot.plt)
+ *(.got)
+ *(.igot)
+
+.sdata          0x0000000010000000        0x4 load address 0x0000000000000354
+                0x0000000010000800                __global_pointer$ = (. + 0x800)
+ *(.srodata.cst16)
+ *(.srodata.cst8)
+ *(.srodata.cst4)
+ *(.srodata.cst2)
+ *(.srodata .srodata.*)
+ *(.sdata .sdata.* .gnu.linkonce.s.*)
+ .sdata.__dso_handle
+                0x0000000010000000        0x4 /media/tcmichals/Working/cyclone-10/cyc1000/riscv-gcc/riscv-none-embed-gcc/8.3.0-1.1/bin/../lib/gcc/riscv-none-embed/8.3.0/rv32i/ilp32/crtbegin.o
+                0x0000000010000000                __dso_handle
+                0x0000000010000004                _edata = .
+                0x0000000010000004                . = ALIGN (0x4)
+
+.bss            0x0000000010000004       0x18 load address 0x0000000000000358
+                0x0000000010000004                _sbss = .
+                0x0000000010000004                __bss_start__ = _sbss
+ *(.bss)
+ .bss           0x0000000010000004        0x0 /media/tcmichals/Working/cyclone-10/cyc1000/riscv-gcc/riscv-none-embed-gcc/8.3.0-1.1/bin/../lib/gcc/riscv-none-embed/8.3.0/../../../../riscv-none-embed/lib/rv32i/ilp32/crt0.o
+ .bss           0x0000000010000004        0x0 /media/tcmichals/Working/cyclone-10/cyc1000/riscv-gcc/riscv-none-embed-gcc/8.3.0-1.1/bin/../lib/gcc/riscv-none-embed/8.3.0/rv32i/ilp32/crtbegin.o
+ .bss           0x0000000010000004        0x0 /tmp/ccG8zist.o
+ .bss           0x0000000010000004        0x0 /tmp/cceebg6q.o
+ .bss           0x0000000010000004        0x0 /media/tcmichals/Working/cyclone-10/cyc1000/riscv-gcc/riscv-none-embed-gcc/8.3.0-1.1/bin/../lib/gcc/riscv-none-embed/8.3.0/../../../../riscv-none-embed/lib/rv32i/ilp32/libg.a(lib_a-init.o)
+ .bss           0x0000000010000004        0x0 /media/tcmichals/Working/cyclone-10/cyc1000/riscv-gcc/riscv-none-embed-gcc/8.3.0-1.1/bin/../lib/gcc/riscv-none-embed/8.3.0/../../../../riscv-none-embed/lib/rv32i/ilp32/libg.a(lib_a-memset.o)
+ .bss           0x0000000010000004        0x0 /media/tcmichals/Working/cyclone-10/cyc1000/riscv-gcc/riscv-none-embed-gcc/8.3.0-1.1/bin/../lib/gcc/riscv-none-embed/8.3.0/rv32i/ilp32/crtend.o
+ *(.bss*)
+ .bss.object.5461
+                0x0000000010000004       0x18 /media/tcmichals/Working/cyclone-10/cyc1000/riscv-gcc/riscv-none-embed-gcc/8.3.0-1.1/bin/../lib/gcc/riscv-none-embed/8.3.0/rv32i/ilp32/crtbegin.o
+ *(COMMON)
+                0x000000001000001c                . = ALIGN (0x4)
+                0x000000001000001c                _ebss = .
+                0x000000001000001c                __bss_end__ = _ebss
+
+.sbss.completed.5456
+                0x000000001000001c        0x1 load address 0x0000000000000358
+ .sbss.completed.5456
+                0x000000001000001c        0x1 /media/tcmichals/Working/cyclone-10/cyc1000/riscv-gcc/riscv-none-embed-gcc/8.3.0-1.1/bin/../lib/gcc/riscv-none-embed/8.3.0/rv32i/ilp32/crtbegin.o
+
+._user_heap_stack
+                0x000000001000001d      0xa03 load address 0x0000000000000358
+                0x0000000010000020                . = ALIGN (0x8)
+ *fill*         0x000000001000001d        0x3 
+                [!provide]                        PROVIDE (end = .)
+                0x0000000010000020                PROVIDE (_end = .)
+                0x0000000010000220                . = (. + _Min_Heap_Size)
+ *fill*         0x0000000010000020      0x200 
+                0x0000000010000a20                . = (. + _Min_Stack_Size)
+ *fill*         0x0000000010000220      0x800 
+                0x0000000010000a20                . = ALIGN (0x8)
+                0x0000000010000a20                _fstack = .
+
+/DISCARD/
+ libc.a(*)
+ libm.a(*)
+ libgcc.a(*)
+
+.ARM.attributes
+ *(.ARM.attributes)
+OUTPUT(./bin/exampleTimer.elf elf32-littleriscv)
+
+.debug_info     0x0000000000000000      0xd39
+ .debug_info    0x0000000000000000      0xd13 /tmp/ccG8zist.o
+ .debug_info    0x0000000000000d13       0x26 /tmp/cceebg6q.o
+
+.debug_abbrev   0x0000000000000000      0x28a
+ .debug_abbrev  0x0000000000000000      0x276 /tmp/ccG8zist.o
+ .debug_abbrev  0x0000000000000276       0x14 /tmp/cceebg6q.o
+
+.debug_loc      0x0000000000000000       0x42
+ .debug_loc     0x0000000000000000       0x42 /tmp/ccG8zist.o
+
+.debug_aranges  0x0000000000000000       0x50
+ .debug_aranges
+                0x0000000000000000       0x30 /tmp/ccG8zist.o
+ .debug_aranges
+                0x0000000000000030       0x20 /tmp/cceebg6q.o
+
+.debug_ranges   0x0000000000000000       0x38
+ .debug_ranges  0x0000000000000000       0x38 /tmp/ccG8zist.o
+
+.debug_line     0x0000000000000000      0x605
+ .debug_line    0x0000000000000000      0x48a /tmp/ccG8zist.o
+ .debug_line    0x000000000000048a      0x17b /tmp/cceebg6q.o
+
+.debug_str      0x0000000000000000      0x692
+ .debug_str     0x0000000000000000      0x67f /tmp/ccG8zist.o
+                                        0x7f4 (size before relaxing)
+ .debug_str     0x000000000000067f       0x13 /tmp/cceebg6q.o
+                                         0x63 (size before relaxing)
+
+.comment        0x0000000000000000       0x33
+ .comment       0x0000000000000000       0x33 /tmp/ccG8zist.o
+                                         0x34 (size before relaxing)
+
+.debug_frame    0x0000000000000000       0x7c
+ .debug_frame   0x0000000000000000       0x40 /tmp/ccG8zist.o
+ .debug_frame   0x0000000000000040       0x3c /media/tcmichals/Working/cyclone-10/cyc1000/riscv-gcc/riscv-none-embed-gcc/8.3.0-1.1/bin/../lib/gcc/riscv-none-embed/8.3.0/../../../../riscv-none-embed/lib/rv32i/ilp32/libg.a(lib_a-init.o)

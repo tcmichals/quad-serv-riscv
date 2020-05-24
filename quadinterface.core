@@ -1,0 +1,174 @@
+CAPI=2:
+
+name : ::quadinterface:0
+
+filesets:
+
+  wb_intercon_dep:
+    depend:
+      [wb_intercon]
+
+  mem_files:
+    files:
+      - sw/bin/exampleLED.hex        : {copyto : /tmp/exampleLED.hex}
+      - sw/bin/exampleTimer.hex      : {copyto : /tmp/exampleTimer.hex}
+      - sw/bin/exampleFastSerial.hex : {copyto : /tmp/exampleFastSerial.hex}
+    file_type : user      
+
+  quad_tb:
+    files:
+      - tb/quadsoc_tb.v
+      - tb/quadsoc_tb.cpp : {file_type : cppSource}
+    file_type : verilogSource
+    depend : [vlog_tb_utils]
+
+  soc:
+    files:
+      - rtl/debug_output.v
+      - rtl/quad_gpio.v
+      - rtl/quad_timer.v
+      -  "tool_quartus? (rtl/ram_quartus.sv)" : {file_type : systemVerilogSource}
+      - "!tool_quartus? (rtl/ram.v)"
+      - rtl/quadsoc.v
+      - rtl/fastserial/clock_fastserial.v
+      - rtl/fastserial/fastserial_wb.v
+      - rtl/fastserial/rx_fastserial.v
+      - rtl/fastserial/tx_fastserial.v
+    file_type : verilogSource
+    depend : [fifo, serv, wb_intercon]
+
+  cyc1000:
+    files:
+      - data/cyc1000.tcl : {file_type : tclSource}
+      - data/cyc1000.sdc : {file_type : SDC}
+      - rtl/cyc1000/PLL12M.v : {file_type : verilogSource}
+      - rtl/cyc1000/soc_cyc1000.v : {file_type : verilogSource}
+
+targets:
+  default:
+    filesets : [wb_intercon_dep, soc]
+    generate : [wb_intercon]
+   
+  verilator_tb:
+    default_tool: verilator
+    generate : [wb_intercon]
+    filesets : [mem_files, wb_intercon_dep, soc, quad_tb]
+    parameters :
+      - RISCV_FORMAL
+      - firmwaretb
+      - ramsize
+      - timeout
+      - vcd
+      - vcd_start
+      - VERBOSE
+    tools:
+      verilator:
+        verilator_options : [--trace]
+    toplevel : quadsoc_tb
+
+  cyc1000:
+    default_tool: quartus
+    description: cyc1000 FPGA board
+    generate : [wb_intercon]
+    filesets : [mem_files, wb_intercon_dep, soc, cyc1000]
+    parameters : [firmware=main.hex, ramsize=8192, timer_divider=200, fast_serial_divider=8]
+    tools:
+      quartus:
+        family : Cyclone 10 LP
+        device : 10CL025YU256C8G
+    toplevel : soc_cyc1000
+
+generate:
+  wb_intercon:
+    generator : wb_intercon_gen
+    parameters:
+      masters:
+        cpu_ibus:
+            slaves: [rom]
+        cpu_dbus:
+            slaves: [rom, ram, timer, gpio, debug, fastserial]
+
+      slaves:
+        rom:
+          datawidth: 32
+          offset: 0x0
+          size: 8192
+        ram:
+          datawidth: 32
+          offset: 0x10000000
+          size: 8192
+
+        timer:
+          datawidth: 32
+          offset: 0x80000000
+          size: 16
+
+        gpio:
+          datawidth: 32
+          offset: 0x91000000
+          size: 16
+
+        debug:
+          datawidth: 8
+          offset: 0x92000000
+          size: 2
+
+        fastserial:
+          datawidth: 32
+          offset: 0x93000000
+          size: 16     
+
+
+parameters:
+  timeout:
+    datatype : int
+    paramtype : plusarg
+
+  vcd:
+    datatype : bool
+    paramtype : plusarg
+
+  RISCV_FORMAL:
+    datatype  : bool
+    paramtype : vlogdefine 
+
+  VERBOSE:
+      datatype  : bool
+      paramtype : vlogdefine 
+
+  firmware:
+    datatype : file
+    description : Preload ROM with a hex file at runtime (overrides memfile)
+    paramtype : vlogparam
+
+
+  firmwaretb:
+    datatype : file
+    description : Preload ROM with a hex file at runtime (overrides memfile)
+    paramtype : plusarg    
+
+  ramsize:
+    datatype    : int
+    description : RAM size
+    paramtype   : vlogparam
+
+  vcd_start:
+    datatype    : int
+    description : Delay start of VCD dumping until the specified time
+    paramtype   : plusarg
+
+  timer_divider:
+    datatype    : int
+    description : divider to make the clock 1us
+    paramtype   : vlogparam
+
+  fast_serial_divider:
+    datatype    : int
+    description : divider for the system clock for fast serial 
+    paramtype   : vlogparam
+
+
+
+
+
+  
